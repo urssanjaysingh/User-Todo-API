@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Welcome to the User Todo API</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 20px;
+            }
+            h1 {
+                color: #333;
+            }
+            .route-section {
+                margin-bottom: 20px;
+            }
+            .route-section h2 {
+                margin-top: 20px;
+            }
+            ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
+            li {
+                padding: 5px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to the User Todo API!</h1>
+        <p>Here are the available routes:</p>
+
+        <div class="route-section">
+            <h2>User Routes:</h2>
+            <ul>
+                <li>
+                    <strong>POST /users/register</strong>: Register a new user
+                </li>
+                <li><strong>POST /users/login</strong>: Log in a user</li>
+                <li><strong>DELETE /users/logout</strong>: Log out a user</li>
+                <li>
+                    <strong>POST /users/forgot-password</strong>: Request a
+                    password reset
+                </li>
+                <li><strong>GET /users/profile</strong>: Fetch user profile</li>
+                <li>
+                    <strong>PATCH /users/update-profile</strong>: Update user
+                    profile
+                </li>
+                <li>
+                    <strong>PATCH /users/update-password</strong>: Update user
+                    password
+                </li>
+                <li>
+                    <strong>DELETE /users/delete-profile</strong>: Delete user
+                    profile
+                </li>
+                <li>
+                    <strong>PATCH /users/remove-profile-picture</strong>: Remove
+                    profile picture
+                </li>
+                <li>
+                    <strong>PATCH /users/update-profile-picture</strong>: Update
+                    profile picture
+                </li>
+                <li>
+                    <strong>GET /users/all</strong>: Fetch all users (admin
+                    only)
+                </li>
+                <li>
+                    <strong>GET /users/:id</strong>: Fetch a single user (admin
+                    only)
+                </li>
+                <li>
+                    <strong>PATCH /users/:id</strong>: Update user role (admin
+                    only)
+                </li>
+                <li>
+                    <strong>DELETE /users/:id</strong>: Delete a user (admin
+                    only)
+                </li>
+            </ul>
+        </div>
+
+        <div class="route-section">
+            <h2>Todo Routes:</h2>
+            <ul>
+                <li><strong>POST /todos/add</strong>: Add a new todo</li>
+                <li>
+                    <strong>GET /todos/user-todos</strong>: Fetch all todos of
+                    the authenticated user
+                </li>
+                <li>
+                    <strong>PATCH /todos/update-todo-status/:id</strong>: Update
+                    the status of a todo
+                </li>
+                <li>
+                    <strong>GET /todos/filter-todo</strong>: Get todos by status
+                    (admin only)
+                </li>
+                <li>
+                    <strong>GET /todos/all</strong>: Fetch all todos (admin
+                    only)
+                </li>
+                <li><strong>GET /todos/:id</strong>: Fetch a single todo</li>
+                <li><strong>PATCH /todos/:id</strong>: Update a todo</li>
+                <li><strong>DELETE /todos/:id</strong>: Delete a todo</li>
+            </ul>
+        </div>
+
+        <p>Explore these routes to manage users and todos effectively.</p>
+    </body>
+</html>
