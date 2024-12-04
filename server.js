@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
+const cors = require("cors");
 const { connectDB } = require("./config/db");
 const { PORT } = require("./config");
 const { ErrorHandler } = require("./middlewares/error.middleware");
@@ -10,6 +11,8 @@ const todoRoutes = require("./routers/todo.router");
 connectDB();
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.static("public"));
 
