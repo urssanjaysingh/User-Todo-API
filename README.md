@@ -143,6 +143,56 @@ await newUser.save(); // Saves the user after password hashing
 const isMatch = await newUser.comparePassword("securepassword123"); // Returns true or false
 ```
 
+---
+
+### Authentication and Authorization
+
+#### **Methodology**
+
+1. **Authentication**
+
+    - Managed using **JWT (JSON Web Tokens)** stored in **HTTP-only cookies** for enhanced security.
+    - Tokens are verified using the `jsonwebtoken` library to ensure their validity and authenticity.
+    - Cookies eliminate the need to send tokens in headers, protecting against XSS attacks.
+
+2. **Authorization**
+    - Implements **role-based access control (RBAC)** to restrict access to certain routes based on the user’s role (e.g., admin or standard user).
+    - Ensures admin-only routes are accessed exclusively by users with the "admin" role.
+
+#### **Middleware Implementations**
+
+1. **`authenticate`**
+
+    - Verifies the presence and validity of the JWT stored in cookies.
+    - Decodes the token to extract user information and fetches the corresponding user from the database.
+    - Rejects requests with missing or invalid cookies with structured error messages.
+    - Adds the authenticated user object to `req.user` for use in subsequent middleware or controllers.
+
+2. **`authorize`**
+
+    - Validates the user’s role and ensures only users with admin privileges can access admin-specific endpoints.
+    - Denies access with an error message if the user lacks proper authorization.
+
+---
+
+#### **Client-Side Consideration**
+
+To ensure cookies are sent with requests, use the `withCredentials: true` configuration in your HTTP client (e.g., Axios).
+
+**Axios Example**:
+
+```javascript
+import axios from "axios";
+
+axios.post(
+    "https://your-api-url.com/users/login",
+    { email: "user@example.com", password: "password123" },
+    { withCredentials: true } // Ensures cookies are included in the request
+);
+```
+
+---
+
 # Todo Model Documentation
 
 ## Schema Definition
