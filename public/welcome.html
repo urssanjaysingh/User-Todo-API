@@ -13,14 +13,16 @@
         <div class="container">
             <section class="section">
                 <div class="content has-text-centered">
-                    <h1 class="title is-3 has-text-primary">
+                    <h1 class="title is-3 has-text-dark">
                         Welcome to the User Todo API!
                     </h1>
-                    <p class="subtitle is-5">Here are the available routes:</p>
+                    <p class="subtitle is-5 has-text-grey-dark">
+                        Here are the available routes:
+                    </p>
                 </div>
 
-                <div class="box">
-                    <h2 class="title is-4 has-text-info">User Routes:</h2>
+                <div class="box has-background-white">
+                    <h2 class="title is-4 has-text-primary">User Routes:</h2>
                     <ul class="list is-hoverable">
                         <li>
                             <strong>POST /users/register</strong>: Register a
@@ -80,7 +82,7 @@
                     </ul>
                 </div>
 
-                <div class="box">
+                <div class="box has-background-white mt-5">
                     <h2 class="title is-4 has-text-info">Todo Routes:</h2>
                     <ul class="list is-hoverable">
                         <li>
@@ -115,7 +117,135 @@
                 </div>
 
                 <div class="content has-text-centered mt-5">
-                    <p class="is-size-5">
+                    <p class="is-size-5 has-text-grey-dark">
+                        Explore these routes to manage users and todos
+                        effectively.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Welcome to the User Todo API</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+        />
+    </head>
+    <body class="has-background-light">
+        <div class="container">
+            <section class="section">
+                <div class="content has-text-centered">
+                    <h1 class="title is-3 has-text-dark">
+                        Welcome to the User Todo API!
+                    </h1>
+                    <p class="subtitle is-5 has-text-grey-dark">
+                        Here are the available routes:
+                    </p>
+                </div>
+
+                <div class="box has-background-white">
+                    <h2 class="title is-4 has-text-primary">User Routes:</h2>
+                    <ul class="list is-hoverable">
+                        <li>
+                            <strong>POST /users/register</strong>: Register a
+                            new user
+                        </li>
+                        <li>
+                            <strong>POST /users/login</strong>: Log in a user
+                        </li>
+                        <li>
+                            <strong>DELETE /users/logout</strong>: Log out a
+                            user
+                        </li>
+                        <li>
+                            <strong>POST /users/forgot-password</strong>:
+                            Request a password reset
+                        </li>
+                        <li>
+                            <strong>GET /users/profile</strong>: Fetch user
+                            profile
+                        </li>
+                        <li>
+                            <strong>PATCH /users/update-profile</strong>: Update
+                            user profile
+                        </li>
+                        <li>
+                            <strong>PATCH /users/update-password</strong>:
+                            Update user password
+                        </li>
+                        <li>
+                            <strong>DELETE /users/delete-profile</strong>:
+                            Delete user profile
+                        </li>
+                        <li>
+                            <strong>PATCH /users/remove-profile-picture</strong
+                            >: Remove profile picture
+                        </li>
+                        <li>
+                            <strong>PATCH /users/update-profile-picture</strong
+                            >: Update profile picture
+                        </li>
+                        <li>
+                            <strong>GET /users/all</strong>: Fetch all users
+                            (admin only)
+                        </li>
+                        <li>
+                            <strong>GET /users/:id</strong>: Fetch a single user
+                            (admin only)
+                        </li>
+                        <li>
+                            <strong>PATCH /users/:id</strong>: Update user role
+                            (admin only)
+                        </li>
+                        <li>
+                            <strong>DELETE /users/:id</strong>: Delete a user
+                            (admin only)
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="box has-background-white mt-5">
+                    <h2 class="title is-4 has-text-info">Todo Routes:</h2>
+                    <ul class="list is-hoverable">
+                        <li>
+                            <strong>POST /todos/add</strong>: Add a new todo
+                        </li>
+                        <li>
+                            <strong>GET /todos/user-todos</strong>: Fetch all
+                            todos of the authenticated user
+                        </li>
+                        <li>
+                            <strong>PATCH /todos/update-todo-status/:id</strong
+                            >: Update the status of a todo
+                        </li>
+                        <li>
+                            <strong>GET /todos/filter-todo</strong>: Get todos
+                            by status (admin only)
+                        </li>
+                        <li>
+                            <strong>GET /todos/all</strong>: Fetch all todos
+                            (admin only)
+                        </li>
+                        <li>
+                            <strong>GET /todos/:id</strong>: Fetch a single todo
+                        </li>
+                        <li>
+                            <strong>PATCH /todos/:id</strong>: Update a todo
+                        </li>
+                        <li>
+                            <strong>DELETE /todos/:id</strong>: Delete a todo
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="content has-text-centered mt-5">
+                    <p class="is-size-5 has-text-grey-dark">
                         Explore these routes to manage users and todos
                         effectively.
                     </p>
